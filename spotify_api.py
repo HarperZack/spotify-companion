@@ -5,8 +5,8 @@ from urllib.parse import urlencode
 import pprint
 
 
-CLIENT_ID = 'f970d68b72c642389ed67f78bdecbaa4'
-CLIENT_SECRET = 1
+CLIENT_ID = 'b548bbde8d88420aa1b7229742ebcd2a'
+CLIENT_SECRET = '863dd96c91f1428ca2d869b2c7097620'
 CLIENT_CREDS = base64.b64encode(f'{CLIENT_ID}:{CLIENT_SECRET}'.encode())
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 LIMIT_DEFAULT = '1'
