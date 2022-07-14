@@ -1,24 +1,17 @@
-import spotipy_api
 import spotipy_api as spot
 import setlist_parser
 from datetime import datetime
-
+from pprint import pprint as pp
 
 if __name__ == '__main__':
-    # Check app's authorization and accuracy
     client = spot.SpotifyClient()
-    test = spotipy_api.Tests()
+    parsed_info = setlist_parser.PlaylistInfo()
+    now = datetime.now().strftime('%I:%M:%S %p')
 
-    if test.run() is True:
-        parsed_info = setlist_parser.PlaylistInfo()
-        searches = parsed_info.queries
-        title = parsed_info.playlist_title
-        now = datetime.now().strftime('%I:%M:%S %p')
+    # Setlist creation function
+    client.create_setlist_playlist(parsed_info.playlist_title, parsed_info.queries)
+    pp(f'{len(parsed_info.queries)} tracks listed.')
+    pp(now)
 
-        print(title)
-        print(searches)
-        print(now)
-    else:
-        print('Check test class')
+    # Top 50 Playlist and sending function
 
-    client.search_track('billie jean')
