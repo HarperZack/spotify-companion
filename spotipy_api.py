@@ -3,7 +3,7 @@ from pprint import pprint as pp
 
 REDIRECT = 'http://127.0.0.1:9090'
 CLIENT_ID = 'b548bbde8d88420aa1b7229742ebcd2a'
-CLIENT_SECRET = '863dd96c91f1428ca2d869b2c7097620'
+CLIENT_SECRET = '47def98fdcec48a1af068cdb5a1ba48d'
 SCOPE = [
     'user-library-read',
     'playlist-modify-public'

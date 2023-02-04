@@ -14,7 +14,9 @@ class PlaylistInfo:
         with open(TEXT_FILE, 'r') as source:
             for line in source:
                 line = line.strip()
-                if line is not '':
+                if '\'' in line:
+                    line.replace('\'', '')
+                if line != '':
                     self.queries.append(line)
             self.playlist_title = self.queries[0]
             del self.queries[0]
