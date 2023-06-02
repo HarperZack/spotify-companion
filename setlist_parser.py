@@ -16,6 +16,8 @@ class PlaylistInfo:
                 line = line.strip()
                 if '\'' in line:
                     line.replace('\'', '')
+                if '\"' in line:
+                    line.replace('\"', "")
                 if line != '':
                     self.queries.append(line)
             self.playlist_title = self.queries[0]
