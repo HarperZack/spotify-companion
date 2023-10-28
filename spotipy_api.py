@@ -58,6 +58,13 @@ class SpotifyClient:
     Main creation methods
     """
     def create_setlist_playlist(self, playlist_title, tracks):
-        playlist_id = self.create_playlist(playlist_title)
-        self.add_to_playlist(playlist_id, tracks)
+        if len(tracks) <= 100:
+            playlist_id = self.create_playlist(playlist_title)
+            self.add_to_playlist(playlist_id, tracks)
+
+            '''
+            Some function here to grab the second list of songs and add them in another call to get around 100 track
+            limit per request. Not sure what a request is considered, but if its just another function call, I'm set
+            '''
+
 

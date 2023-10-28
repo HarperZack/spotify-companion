@@ -1,4 +1,6 @@
 import os
+from pprint import pprint as pp
+
 
 DESKTOP = os.path.join('C:', os.sep, 'Users', 'Zack', 'Desktop')
 TEXT_FILE = os.path.join(DESKTOP, 'Setlist to Playlist.txt')
@@ -8,6 +10,8 @@ class PlaylistInfo:
     def __init__(self):
         self.queries = list()
         self.playlist_title = str()
+        self.track_count = 0
+        self.extra_tracks = list()
         self.parse_text_file()
 
     def parse_text_file(self):
@@ -22,3 +26,10 @@ class PlaylistInfo:
                     self.queries.append(line)
             self.playlist_title = self.queries[0]
             del self.queries[0]
+
+            self.track_count = len(self.queries)
+
+            if self.track_count > 100:
+                self.extra_tracks = self.queries[100:]
+                del self.queries[100:]
+

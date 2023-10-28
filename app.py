@@ -13,6 +13,8 @@ if __name__ == '__main__':
     # Setlist creation function
     client.create_setlist_playlist(parsed_info.playlist_title, parsed_info.queries)
     pp(f'{len(parsed_info.queries)} tracks listed.')
+    if parsed_info.extra_tracks is not None:
+        pp(f'{parsed_info.extra_tracks} were over the 100 track limit.')
     pp(now)
 
 
