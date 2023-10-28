@@ -1,9 +1,8 @@
 import os
+import restricted
 from pprint import pprint as pp
 
-
-DESKTOP = os.path.join('C:', os.sep, 'Users', 'Zack', 'Desktop')
-TEXT_FILE = os.path.join(DESKTOP, 'Setlist to Playlist.txt')
+TEXT_FILE = os.path.join(restricted.DESKTOP, 'Setlist to Playlist.txt')
 
 
 class PlaylistInfo:

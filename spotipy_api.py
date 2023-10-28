@@ -1,9 +1,9 @@
 import spotipy
 from pprint import pprint as pp
 
-REDIRECT = 'http://127.0.0.1:9090'
-CLIENT_ID = 'b548bbde8d88420aa1b7229742ebcd2a'
-CLIENT_SECRET = '47def98fdcec48a1af068cdb5a1ba48d'
+import restricted
+
+
 SCOPE = [
     'user-library-read',
     'playlist-modify-public'
@@ -12,8 +12,10 @@ SCOPE = [
 
 class SpotifyClient:
     def __init__(self):
-        self.client = spotipy.Spotify(auth_manager=spotipy.oauth2.SpotifyOAuth(CLIENT_ID, CLIENT_SECRET, scope=SCOPE,
-                                                                               redirect_uri=REDIRECT))
+        self.client = spotipy.Spotify(auth_manager=spotipy.oauth2.SpotifyOAuth(restricted.CLIENT_ID,
+                                                                               restricted.CLIENT_SECRET,
+                                                                               scope=SCOPE,
+                                                                               redirect_uri=restricted.REDIRECT))
         self.me = self.client.me()['id']
     """
     Helper Methods for track searching
