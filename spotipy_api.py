@@ -65,8 +65,8 @@ class SpotifyClient:
             self.add_to_playlist(playlist_id, tracks)
 
             '''
-            Some function here to grab the second list of songs and add them in another call to get around 100 track
-            limit per request. Not sure what a request is considered, but if its just another function call, I'm set
+            Some method here to grab the second list of songs and add them in another call to get around 100 track
+            limit per request. Not sure what a request is considered, but if its just another method call, I'm set
             '''
 
 

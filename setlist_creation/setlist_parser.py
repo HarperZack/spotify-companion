@@ -1,6 +1,5 @@
 import os
 import restricted
-from pprint import pprint as pp
 
 TEXT_FILE = os.path.join(restricted.DESKTOP, 'Setlist to Playlist.txt')
 
